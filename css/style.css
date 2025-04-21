@@ -59,6 +59,37 @@ body {
 .nav-links li a:hover {
   color: #00bcd4;
 }
+.nav-links .dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e1e2f;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+}
+.dropdown-menu li {
+  display: block;
+  text-align: left;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  white-space: nowrap;
+}
+.dropdown-menu li a:hover {
+  background-color: #00bcd4;
+  color: #1e1e2f;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 /* Hero */
   .hero {
   position: relative;
@@ -316,6 +347,18 @@ img.hover-shadow {
 
   .logo {
     width: 20vw;
+  }
+  .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+  .dropdown-menu li a{
+    padding-left: 2rem;
+    background-color: transparent;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
 }
 @media (max-width: 600px) {

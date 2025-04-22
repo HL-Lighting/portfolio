@@ -299,6 +299,27 @@ img.hover-shadow {
   background-color: #00bcd4;
   color: #1e1e2f;
 }
+.portrait-pdf-grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  /* max-width: 1000px; */
+  margin: 0 auto;
+}
+
+.pdf-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-card h3 {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+}
 /* Footer */
 .footer {
     background-color: #1e1e1e;
@@ -359,6 +380,9 @@ img.hover-shadow {
   }
   .dropdown:hover .dropdown-menu {
     display: block;
+  }
+  .portrait-pdf-grid {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 600px) {

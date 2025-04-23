@@ -259,8 +259,14 @@ img.hover-shadow {
     grid-template-columns: repeat(2, 1fr);
   }
 } */
- 
-
+ /*hilight tiles*/
+.tile-section{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+}
 
 /* PDF */
 .pdf-section {

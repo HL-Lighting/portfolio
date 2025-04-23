@@ -34,8 +34,132 @@
 				<div class="hero-content">
 					<h1 class="page-title">Henry Ledbetter</h1>
 					<h3 class="subheading">Lighting Designer/Programmer</h3><br>
-					<p class="subheading"><a href="portfolio.html">Portfolio</p><br>
+					<p class="subheading"><a href="portfolio.html">Portfolio</p></a><br>
                     <!-- <p class="subheading">potential proudest work link</p> -->
 				</div>
 			</div>
 		</header>
+        <div class="tile-header">
+            <h2 style="text-align: center;">Portfolio Highlights</h2>
+        </div>
+        <section class="tile-section">
+            <!-- <h1>Portfolio Highlights</h1> -->
+            <div class="tile">
+                <img src="images/pirates/awayAway.jpg" alt="Pirates of Penzance">
+                <h3>Pirates of Penzance</h3>
+                <a href="pirates.html">More Info →</a>
+            </div>
+            <div class="tile">
+                <img src="images/msc/ROCKBAND.png" alt="Rockband Project">
+                <h3>Rockband Project</h3>
+                <a href="rockband.html">Watch Video →</a>
+            </div>
+            <div class="tile">
+                <img src="images/everybody/DanceMacabre3.jpg" alt="Everybody">
+                <h3>Everybody</h3>
+                <a href="everybody.html">More Info →</a>
+            </div>
+            <div class="tile">
+                <img src="images/sluh/dance9.jpeg" alt="High School Work">
+                <h3>High School Work</h3>
+                <a href="sluh.html">More Info →</a>
+            </div>
+        </section>
+        <section class="gallery-section">
+			<div class="gallery-header">
+			  <h2>Photos</h2>
+			</div>
+			<div class="row">
+				<div class="column">
+			  		<img src="images/pirates/copDance.jpg" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(1)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">
+			  		<img src="images/pirates/paradox.jpg" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(2)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">	
+					<img src="images/pirates/glory2Grave.jpg" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(3)" class="hover-shaddow cursor">
+				</div>
+            </div>
+			<div class="row"> 
+				<div class="column">	
+					<img src="images/everybody/DanceMacabre1-min.jpg" alt="Everybody" width="100%" onclick="openModal();currentSlide(4)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">
+			  		<img src="images/everybody/DanceMacabre2.jpg" alt="Everybody" width="100%" onclick="openModal();currentSlide(5)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">
+			  		<img src="images/everybody/DanceMacabre3.jpg" alt="Everybody" width="100%" onclick="openModal();currentSlide(6)" class="hover-shaddow cursor">
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+			  		<img src="images/sluh/dance5.jpeg" alt="High School Dance" width="100%" onclick="openModal();currentSlide(7)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">
+			  		<img src="images/sluh/dance2.jpeg" alt="High School Dance" width="100%" onclick="openModal();currentSlide(8)" class="hover-shaddow cursor">
+				</div>
+				<div class="column">
+			  		<img src="images/spellingBee/jesusTakeTheShutter.jpg" alt="Putnam County Spelling Bee" width="100%" onclick="openModal();currentSlide(9)" class="hover-shaddow cursor">
+				</div>
+			</div>
+			<div id="myModal" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+					<div class="mySlides">
+						<div class="numbertext">1 / 9</div>
+						<img src="images/pirates/copDance.jpg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">2 / 9</div>
+						<img src="images/pirates/paradox.jpg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">3 / 9</div>
+						<img src="images/pirates/glory2Grave.jpg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">4 / 9</div>
+						<img src="images/everybody/DanceMacabre1-min.jpg" alt="Dance Macabre" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">5 / 9</div>
+						<img src="images/everybody/DanceMacabre2.jpg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">6 / 9</div>
+						<img src="images/everybody/DanceMacabre3.jpg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">7 / 9</div>
+						<img src="images/sluh/dance5.jpeg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">8 / 9</div>
+						<img src="images/sluh/dance2.jpeg" width="100%">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">9 / 9</div>
+						<img src="images/spellingBee/jesusTakeTheShutter.jpg" width="100%">
+					</div>
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					<div class="caption-container">
+						<p id="caption"></p>
+					</div>
+				</div>
+
+			</div>
+		  </section>
+          <footer class="footer">
+			<div class="footer-content">
+			  <div class="contact-info">
+				<p>Phone: <a href="tel:+13148133822">(314) 813-3822</a></p>
+				<p>Email: <a href="mailto:henry@henryledbetter.com">henry@henryledbetter.com</a></p>
+			  </div>
+			  <p class="copyright">&copy; 2025 Henry Ledbetter. All rights reserved.</p>
+			</div>
+		  </footer>
+    <script src="js/script.js"></script>
+    </div>
+</body>
+</html>

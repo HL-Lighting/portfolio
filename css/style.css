@@ -116,6 +116,13 @@ body {
     color: white;
     padding: 0 1rem;
 }
+.hero-content a {
+  text-decoration: none;
+  color: #fff;
+}
+.hero-content a:hover{
+  text-decoration: underline;
+}
 .subheading {
     font-size: 1.25rem;
     color: white;
@@ -260,12 +267,55 @@ img.hover-shadow {
   }
 } */
  /*hilight tiles*/
+.tile-header {
+  padding-top: 1rem;
+  background-color: #f9f9f9;
+}
+.tile-header h2 {
+  font-size: 2.5rem;
+}
 .tile-section{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 2rem;
+  margin-top: -20px;
+  margin-bottom: -50px;
   padding: 3rem 2rem;
   background-color: #f9f9f9;
+  text-align: center;
+}
+.tile {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.tile:hover {
+  transform: translateY(-4px);
+}
+.tile img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.tile h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+.tile a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+.tile a:hover {
+  text-decoration: underline;
 }
 
 /* PDF */
@@ -285,6 +335,14 @@ img.hover-shadow {
   margin: 0 auto 1.5rem;
   color: #555;
   font-size: 1rem;
+}
+.pdf-section a {
+  color: black;
+  text-decoration: none;
+}
+.pdf-section a:hover {
+  color: #333;
+  text-decoration: underline;
 }
 .pdf-section object {
   width: 100%;
@@ -348,7 +406,37 @@ img.hover-shadow {
 .contact-info p {
     margin: 0.3rem 0;
 }
+/* video */
+.vid-section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+.vid-title {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+.vid {
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+}
+.vid iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 /* Mobile stuff */
+@media (max-width: 1000px) {
+  .tile-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .page-title {
       font-size: 2rem;
@@ -390,10 +478,17 @@ img.hover-shadow {
   .portrait-pdf-grid {
     grid-template-columns: 1fr;
   }
+  
 }
 @media (max-width: 600px) {
   .footer {
     font-size: 0.8rem;
     padding: 1.5rem;
+  }
+  .tile-section {
+    grid-template-columns: 1fr;
+  }
+  .tile img {
+    height: 160px;
   }
 }

@@ -43,20 +43,35 @@
             <div class="gallery-header">
               <h2>Pirates of Penzance</h2>
               <p>Description</p>
+              <div class="force-center">
+                <button id="prev" class="nav-button">← Last</button><button id="next" class="nav-button">Next →</button>
+              </div>
+              <br><br>
             </div>
-          
-            <div class="main-img">
+            <div class="main-img" id="main-img">
               <img id="current" src="images/pirates/awayAway.webp" alt="Main Image">
             </div>
           
             <div class="thumbnails">
-              <img src="images/pirates/copDance.webp" alt="Cop Dance" class="thumb active">
+              <img src="images/pirates/awayAway.webp" alt="Away Away" class="thumb">
+              <img src="images/pirates/copDance.webp" alt="Cop Dance" class="thumb">
               <img src="images/pirates/endMG.webp" alt="Major General" class="thumb">
               <img src="images/pirates/fin.webp" alt="Finale" class="thumb">
               <img src="images/pirates/glory2Grave.webp" alt="Cop Song" class="thumb">
-              <!-- Add more thumbnails if you want -->
+              <img src="images/msc/piratesPlot.webp" alt="plot" class="thumb" data-type="pdf" data-pdf="pdfs/piratesPlot.pdf">
             </div>
         </section>
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="contact-info">
+            <p>Phone: <a href="tel:+13148133822">(314) 813-3822</a></p>
+            <p>Email: <a href="mailto:henry@henryledbetter.com">henry@henryledbetter.com</a></p>
+            </div>
+            <p class="copyright">&copy; 2025 Henry Ledbetter. All rights reserved.</p>
+            <p class="copyright">Hosted on <a href="https://github.com/HL-Lighting/portfolio">Github</a></p>
+    
+          </div>
+          </footer>
     </div>
     <script src="js/tngallery.js"></script>
 </body>

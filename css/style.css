@@ -236,6 +236,7 @@ img.hover-shadow {
   max-width: 600px;
   margin: 0 auto 2rem;
 }
+
 .gallery-section {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
@@ -439,18 +440,33 @@ img.hover-shadow {
   padding: 2rem;
   background-color: #fafafa;
 }
+.force-center {
+  /* margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main-img {
+  position: relative;
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
 }
-.main-img img {
-  width: 100%;
-  max-height: 80vh;
+.main-img img,
+.main-img object {
+  width: 90%;
+  height: 80vh;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* vertical-align: middle; */
 }
+
 .thumbnails {
   display: flex;
   justify-content: center;
@@ -470,6 +486,21 @@ img.hover-shadow {
 .thumb:hover {
   border-color: #0077cc;
 }
+.nav-button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.nav-button:hover {
+  background-color: #005fa3;
+}
+
 /* Mobile stuff */
 @media (max-width: 1000px) {
   .tile-section {

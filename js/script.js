@@ -1,36 +1,54 @@
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
-  }
-  
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
-  
-  var slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+const dropdown = document.querySelector('.dropdown');
+const dropdownToggle = dropdown.querySelector('a');
+const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+const menuItems = dropdownMenu.querySelectorAll('a');
+
+// Track focus in/out to control visibility
+dropdownToggle.addEventListener('focus', () => {
+  dropdown.setAttribute('aria-expanded', 'true');
+});
+
+dropdownToggle.addEventListener('blur', () => {
+  setTimeout(() => {
+    if (!dropdown.contains(document.activeElement)) {
+      dropdown.setAttribute('aria-expanded', 'false');
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+  }, 150);
+});
+
+dropdownMenu.addEventListener('focusin', () => {
+  dropdown.setAttribute('aria-expanded', 'true');
+});
+
+dropdownMenu.addEventListener('focusout', () => {
+  setTimeout(() => {
+    if (!dropdown.contains(document.activeElement)) {
+      dropdown.setAttribute('aria-expanded', 'false');
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
+  }, 150);
+});
+
+// Arrow key support
+dropdownToggle.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    menuItems[0].focus();
   }
+});
+
+menuItems.forEach((item, index) => {
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const next = menuItems[index + 1] || menuItems[0];
+      next.focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev = menuItems[index - 1] || menuItems[menuItems.length - 1];
+      prev.focus();
+    } else if (e.key === 'Escape') {
+      dropdownToggle.focus();
+      dropdown.setAttribute('aria-expanded', 'false');
+    }
+  });
+});

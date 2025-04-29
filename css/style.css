@@ -20,6 +20,10 @@ body {
   padding: 4px;
 }
 /* Nav */
+nav {
+  position: relative;
+  z-index: 10;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -54,6 +58,7 @@ body {
   color: black;
   font-size: 1rem;
   transition: color 0.3s;
+  display: block;
 }
 
 .nav-links li a:hover {
@@ -63,33 +68,35 @@ body {
   position: relative;
 }
 .dropdown-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1e1e2f;
-  padding: 0.5rem 0;
-  border-radius: 5px;
+  background: #555;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   min-width: 150px;
   z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.dropdown-menu li {
-  display: block;
-  text-align: left;
-}
+
 .dropdown-menu li a {
-  display: block;
-  padding: 0.5rem 1rem;
   color: white;
-  white-space: nowrap;
-}
-.dropdown-menu li a:hover {
-  background-color: #00bcd4;
-  color: #1e1e2f;
-}
-.dropdown:hover .dropdown-menu {
+  padding: 8px 12px;
   display: block;
+  background: #555;
 }
+
+/* Show when aria-expanded is true */
+.dropdown[aria-expanded="true"] .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hero */
   .hero {
   position: relative;
@@ -534,16 +541,33 @@ img.hover-shadow {
     width: 20vw;
   }
   .dropdown-menu {
-    position: static;
-    background-color: transparent;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #555;
+    list-style: none;
+    margin: 0;
     padding: 0;
+    min-width: 150px;
+    
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  .dropdown-menu li a{
-    padding-left: 2rem;
-    background-color: transparent;
+  
+  .dropdown-menu li a {
+    padding: 8px 12px;
+    color: white;
+    background: #555;
   }
-  .dropdown:hover .dropdown-menu {
-    display: block;
+  
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu,
+  .dropdown[aria-expanded="true"] .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
   }
   .portrait-pdf-grid {
     grid-template-columns: 1fr;

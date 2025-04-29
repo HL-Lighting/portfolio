@@ -91,6 +91,7 @@ nav {
 }
 
 /* Show when aria-expanded is true */
+.dropdown:hover .dropdown-menu,
 .dropdown[aria-expanded="true"] .dropdown-menu {
   visibility: visible;
   opacity: 1;

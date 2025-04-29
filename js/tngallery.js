@@ -29,7 +29,19 @@ function updateImage(index) {
   thumbs.forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
 }
+document.querySelectorAll('[data-gallery]').forEach(gallery => {
+  const mainImg = gallery.querySelector('.gallery-main img');
+  const thumbs = gallery.querySelectorAll('.thumb');
 
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImg.src = thumb.src;
+
+      thumbs.forEach(t => t.classList.remove('selected'));
+      thumb.classList.add('selected');
+    });
+  });
+});
 thumbs.forEach((thumb, index) => {
   thumb.addEventListener('click', () => {
     updateImage(index);

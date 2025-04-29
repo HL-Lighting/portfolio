@@ -28,7 +28,6 @@ dropdownMenu.addEventListener('focusout', () => {
   }, 150);
 });
 
-// Arrow key support
 dropdownToggle.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowDown') {
     e.preventDefault();

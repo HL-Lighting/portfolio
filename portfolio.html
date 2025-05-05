@@ -42,24 +42,15 @@
         <section class="tn-gallery">
             <div class="gallery-header">
               <h2>Pirates of Penzance</h2>
-              <p>Description</p>
-              <div class="force-center">
-                <button id="prev" class="nav-button">← Last</button><button id="next" class="nav-button">Next →</button>
-              </div>
-              <br><br>
+              <p>Description</p>          
+            <div class="gallery-grid">
+              <img src="images/pirates/awayAway.webp" alt="Away Away" class="lightbox-thumb">
+              <img src="images/pirates/copDance.webp" alt="Cop Dance" class="lightbox-thumb">
+              <img src="images/pirates/endMG.webp" alt="Major General" class="lightbox-thumb">
+              <img src="images/pirates/fin.webp" alt="Finale" class="lightbox-thumb">
+              <img src="images/pirates/glory2Grave.webp" alt="Cop Song" class="lightbox-thumb">
             </div>
-            <div class="main-img" id="main-img">
-              <img id="current" src="images/pirates/awayAway.webp" alt="Main Image">
-            </div>
-          
-            <div class="thumbnails">
-              <img src="images/pirates/awayAway.webp" alt="Away Away" class="thumb">
-              <img src="images/pirates/copDance.webp" alt="Cop Dance" class="thumb">
-              <img src="images/pirates/endMG.webp" alt="Major General" class="thumb">
-              <img src="images/pirates/fin.webp" alt="Finale" class="thumb">
-              <img src="images/pirates/glory2Grave.webp" alt="Cop Song" class="thumb">
-              <img src="images/msc/piratesPlot.webp" alt="plot" class="thumb" data-type="pdf" data-pdf="pdfs/piratesPlot.pdf">
-            </div>
+            
         </section>
         <footer class="footer">
           <div class="footer-content">
@@ -72,8 +63,14 @@
     
           </div>
           </footer>
+          <div id="lightbox" class="lightbox hidden">
+            <button id="prev" class="nav-btn">←</button>
+            <img src="" alt="Full view" />
+            <button id="next" class="nav-btn">→</button>
+            <div id="caption" class="caption"></div>
+          </div>
     </div>
-    <script src="js/tngallery.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="js/script.js"></script>
 
 </body>

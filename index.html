@@ -69,84 +69,18 @@
 			<div class="gallery-header">
 			  <h2>Photos</h2>
 			</div>
-			<div class="row">
-				<div class="column">
-			  		<img src="images/pirates/copDance.webp" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(1)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/paradox.webp" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(2)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">	
-					<img src="images/pirates/glory2Grave.webp" alt="Pirates of Penzance" width="100%" onclick="openModal();currentSlide(3)" class="hover-shaddow cursor">
-				</div>
-            </div>
-			<div class="row"> 
-				<div class="column">	
-					<img src="images/everybody/DanceMacabre1-min.webp" alt="Everybody" width="100%" onclick="openModal();currentSlide(4)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/everybody/DanceMacabre2.webp" alt="Everybody" width="100%" onclick="openModal();currentSlide(5)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/everybody/DanceMacabre3.webp" alt="Everybody" width="100%" onclick="openModal();currentSlide(6)" class="hover-shaddow cursor">
-				</div>
-			</div>
-			<div class="row">
-				<div class="column">
-			  		<img src="images/sluh/dance5.webp" alt="High School Dance" width="100%" onclick="openModal();currentSlide(7)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/sluh/dance2.webp" alt="High School Dance" width="100%" onclick="openModal();currentSlide(8)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/spellingBee/jesusTakeTheShutter.webp" alt="Putnam County Spelling Bee" width="100%" onclick="openModal();currentSlide(9)" class="hover-shaddow cursor">
-				</div>
-			</div>
-			<div id="myModal" class="modal">
-				<span class="close cursor" onclick="closeModal()">&times;</span>
-				<div class="modal-content">
-					<div class="mySlides">
-						<div class="numbertext">1 / 9</div>
-						<img src="images/pirates/copDance.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">2 / 9</div>
-						<img src="images/pirates/paradox.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">3 / 9</div>
-						<img src="images/pirates/glory2Grave.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">4 / 9</div>
-						<img src="images/everybody/DanceMacabre1-min.webp" alt="Dance Macabre" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">5 / 9</div>
-						<img src="images/everybody/DanceMacabre2.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">6 / 9</div>
-						<img src="images/everybody/DanceMacabre3.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">7 / 9</div>
-						<img src="images/sluh/dance5.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">8 / 9</div>
-						<img src="images/sluh/dance2.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">9 / 9</div>
-						<img src="images/spellingBee/jesusTakeTheShutter.webp" width="100%">
-					</div>
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-					<div class="caption-container">
-						<p id="caption"></p>
-					</div>
-				</div>
+			<div class="gallery-grid">
+				<img src="images/pirates/copDance.webp" alt="The Pirates of Penzance (Designer)" class="lightbox-thumb">
+				<img src="images/pirates/paradox.webp" alt="The Pirates of Penzance (Designer)" class="lightbox-thumb">
+				<img src="images/pirates/glory2Grave.webp" alt="The Pirates of Penzance (Designer)" class="lightbox-thumb">
+				<img src="images/everybody/DanceMacabre1-min.webp" alt="Everybody (Programmer/Associate)" class="lightbox-thumb">
+				<img src="images/everybody/DanceMacabre2.webp" alt="Everybody (Programmer/Associate)" class="lightbox-thumb">
+				<img src="images/everybody/DanceMacabre3.webp" alt="Everybody (Programmer/Associate)" class="lightbox-thumb">
+				<img src="images/sluh/dance5.webp" alt="High School Work (Designer)" class="lightbox-thumb">
+				<img src="images/sluh/dance5.webp" alt="High School Work (Designer)" class="lightbox-thumb">
+				<img src="images/sluh/dance3.webp" alt="High School Work (Designer)" class="lightbox-thumb">
+				<img src="images/spellingBee/jesusTakeTheShutter.webp" alt="Putnam County Spelling Bee (Programmer/Assistant)" class="lightbox-thumb">
+
 
 			</div>
 		  </section>
@@ -160,6 +94,12 @@
 			  <p class="copyright">Hosted on <a href="https://github.com/HL-Lighting/portfolio">Github</a></p>
 			</div>
 		  </footer>
+		  <div id="lightbox" class="lightbox hidden">
+            <button id="prev" class="nav-btn">←</button>
+            <img src="" alt="Full view" />
+            <button id="next" class="nav-btn">→</button>
+            <div id="caption" class="caption"></div>
+          </div>
     </div>
 	<script src="js/lightbox.js"></script>
 	<script src="js/script.js"></script>

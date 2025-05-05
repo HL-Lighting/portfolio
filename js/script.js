@@ -3,7 +3,6 @@ const dropdownToggle = dropdown.querySelector('a');
 const dropdownMenu = dropdown.querySelector('.dropdown-menu');
 const menuItems = dropdownMenu.querySelectorAll('a');
 
-// Track focus in/out to control visibility
 dropdownToggle.addEventListener('focus', () => {
   dropdown.setAttribute('aria-expanded', 'true');
 });

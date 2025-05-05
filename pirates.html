@@ -47,84 +47,16 @@
 			<div class="gallery-header">
 			  <h2>Photos</h2>
 			</div>
-			<div class="row">
-				<div class="column">
-			  		<img src="images/pirates/PrePK.webp" alt="Before Pirate King song" width="100%" onclick="openModal();currentSlide(1)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/PK.webp" alt="Pirate King" width="100%" onclick="openModal();currentSlide(2)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">	
-					<img src="images/pirates/ruthfred.webp" alt="Ruth and Fred" width="100%" onclick="openModal();currentSlide(3)" class="hover-shaddow cursor">
-				</div>
-			<div class="row"> 
-				<div class="column">	
-					<img src="images/pirates/endMG.webp" alt="Modern Major General" width="100%" onclick="openModal();currentSlide(4)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/glory2Grave.webp" alt="Tarantura" width="100%" onclick="openModal();currentSlide(5)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/paradox.webp" alt="Paradox Song" width="100%" onclick="openModal();currentSlide(6)" class="hover-shaddow cursor">
-				</div>
-			</div>
-			<div class="row">
-				<div class="column">
-			  		<img src="images/pirates/awayAway.webp" alt="Ruth and PK Away Away" width="100%" onclick="openModal();currentSlide(7)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/copDance.webp" alt="Police Dance" width="100%" onclick="openModal();currentSlide(8)" class="hover-shaddow cursor">
-				</div>
-				<div class="column">
-			  		<img src="images/pirates/sighingBreeze.webp" alt="Sighing of the Breeze" width="100%" onclick="openModal();currentSlide(9)" class="hover-shaddow cursor">
-				</div>
-			</div>
-			<div id="myModal" class="modal">
-				<span class="close cursor" onclick="closeModal()">&times;</span>
-				<div class="modal-content">
-					<div class="mySlides">
-						<div class="numbertext">1 / 9</div>
-						<img src="images/pirates/PrePK.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">2 / 9</div>
-						<img src="images/pirates/PK.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">3 / 9</div>
-						<img src="images/pirates/ruthfred.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">4 / 9</div>
-						<img src="images/pirates/endMG.webp" alt="Dance Macabre" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">5 / 9</div>
-						<img src="images/pirates/glory2Grave.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">6 / 9</div>
-						<img src="images/pirates/paradox.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">7 / 9</div>
-						<img src="images/pirates/awayAway.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">8 / 9</div>
-						<img src="images/pirates/copDance.webp" width="100%">
-					</div>
-					<div class="mySlides">
-						<div class="numbertext">9 / 9</div>
-						<img src="images/pirates/sighingBreeze.webp" width="100%">
-					</div>
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-					<div class="caption-container">
-						<p id="caption"></p>
-					</div>
-				</div>
-
+			<div class="gallery-grid">
+				<img src="images/pirates/PrePK.webp" alt="Before Pirate King Song" class="lightbox-thumb">
+				<img src="images/pirates/PK.webp" alt="Pirate King Song" class="lightbox-thumb">
+				<img src="images/pirates/ruthfred.webp" alt="Ruth and Fred" class="lightbox-thumb">
+				<img src="images/pirates/endMG.webp" alt="Modern Major General" class="lightbox-thumb">
+				<img src="images/pirates/glory2Grave.webp" alt="Police Song" class="lightbox-thumb">
+				<img src="images/pirates/paradox.webp" alt="A paradox!" class="lightbox-thumb">
+				<img src="images/pirates/awayAway.webp" alt="Away, Away" class="lightbox-thumb">
+				<img src="images/pirates/copDance.webp" alt="Police Dance" class="lightbox-thumb">
+				<img src="images/pirates/sighingBreeze.webp" alt="The sighing of the breeze" class="lightbox-thumb">
 			</div>
 		  </section>
 		  <section class="pdf-section">
@@ -173,6 +105,12 @@
 			  <p class="copyright">Hosted on <a href="https://github.com/HL-Lighting/portfolio">Github</a></p>
 			</div>
 		  </footer>
+		  <div id="lightbox" class="lightbox hidden">
+            <button id="prev" class="nav-btn">←</button>
+            <img src="" alt="Full view" />
+            <button id="next" class="nav-btn">→</button>
+            <div id="caption" class="caption"></div>
+          </div>
 	</div>
 	<script src="js/lightbox.js"></script>
 </body>

@@ -4,9 +4,19 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
-
+section {
+  padding: 40px;
+  margin-bottom: 1rem;
+}
+section:nth-of-type(2n) {
+  background-color: lightgray;
+}
+section:nth-of-type(2n+1) {
+  background-color: #fff;
+}
 .row:after {
   content: "";
   display: table;
@@ -144,7 +154,13 @@ nav {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-
+.gallery-header a {
+  color: black;
+  text-decoration: none;
+}
+.gallery-header a:hover {
+  text-decoration: underline;
+}
 .gallery-header p {
   text-align: center;
   font-size: 1rem;
@@ -166,6 +182,7 @@ nav {
   margin-bottom: 2rem;
 }
 .portfolio-gallery-grid {
+  /* padding-left: 10px; padding-right: 10px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
@@ -216,7 +233,6 @@ nav {
   grid-template-columns: repeat(4,1fr);
   gap: 2rem;
   margin-top: -20px;
-  margin-bottom: -50px;
   padding: 3rem 2rem;
   background-color: #f9f9f9;
   text-align: center;

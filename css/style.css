@@ -165,7 +165,19 @@ nav {
   gap: 10px;
   margin-bottom: 2rem;
 }
+.portfolio-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 2rem;
+}
 .gallery-grid img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.portfolio-gallery-grid img {
   width: 100%;
   cursor: pointer;
   border-radius: 5px;
@@ -356,58 +368,7 @@ nav {
   height: 100%;
   border: none;
 }
-/* Thumbnail gallery */
-.tn-gallery {
-  width: 100%;
-  padding: 2rem;
-  background-color: #fafafa;
-}
-.force-center {
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main-img {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.main-img img,
-.main-img object {
-  width: 90%;
-  height: 80vh;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  /* vertical-align: middle; */
-}
 
-.thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.thumb {
-  width: 100px;
-  height: 70px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  transition: border-color 0.3s ease;
-}
-.thumb:active,
-.thumb:hover {
-  border-color: #0077cc;
-}
 .nav-btn {
   position: absolute;
   top: 50%;

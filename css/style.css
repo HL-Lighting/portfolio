@@ -364,15 +364,22 @@ nav {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 .vid-title {
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   margin: 0;
+}
+.vid-title a {
+  text-decoration: none;
+  color: black;
+}
+.vid-title a:hover {
+  text-decoration: underline;
 }
 .vid {
   flex-grow: 1;

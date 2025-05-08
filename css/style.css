@@ -174,8 +174,8 @@ nav {
   background-color: #f9f9f9;
   text-align: center;
 }
-/* hopefully last fuxciing gallery i make */
 .gallery-grid {
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;

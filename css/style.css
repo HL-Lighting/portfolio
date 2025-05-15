@@ -436,9 +436,6 @@ nav {
       font-size: 2rem;
   }
   
-  .hero {
-      height: 40vh;
-  }
   .navbar {
     flex-direction: column;
     align-items: flex-start;

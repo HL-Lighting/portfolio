@@ -389,7 +389,7 @@ nav {
 .vid video {
   max-height: 80vh;
   text-align: center;
-  width: 90vw;
+  max-width: 90vw;
   border: none;
 }
 

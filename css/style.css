@@ -387,7 +387,8 @@ nav {
   width: 100%;
 }
 .vid video {
-  height: 80vh;
+  text-align: center;
+  width: 90vw;
   border: none;
 }
 

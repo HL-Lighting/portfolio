@@ -82,7 +82,7 @@
       <section class="vid-section">
         <h2 class="vid-title"><a href="rockband.html">Rockband</a></h2>
         <div class="vid">
-            <iframe src="https://www.youtube.com/embed/Z_HdE6W9Wjo?si=t-lh974_P4NkdJjU" title="YouTube video player" frameborder="0"></iframe>
+              <video id="video1" controls></video>
         </div>
       </section>
       <section class="gallery-section">
@@ -167,6 +167,23 @@
   	    const hls = new Hls();
   	    hls.loadSource(source);
   	    hls.attachMedia(video);
+  	  } else {
+  	    console.error("HLS not supported on this browser.");
+  	  }
+  	</script>
+    <script>
+  	  const video1 = document.getElementById('video');
+  	  const source1 = "/vids/Rockband/Rockband.m3u8";   // ← your HLS playlist file
+
+  	  // If browser supports HLS natively (Safari, iOS)
+  	  if (video1.canPlayType('application/vnd.apple.mpegurl')) {
+  	    video1.src = source1;
+
+  	  // Otherwise use hls.js (Chrome, Firefox, Edge)
+  	  } else if (Hls.isSupported()) {
+  	    const hls = new Hls();
+  	    hls.loadSource(source1);
+  	    hls.attachMedia(video1);
   	  } else {
   	    console.error("HLS not supported on this browser.");
   	  }

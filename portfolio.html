@@ -128,6 +128,9 @@
               <!-- <img src="images/sluh/follies7.webp" alt="Senior Follies" class="lightbox-thumb">
               <img src="images/sluh/follies8.webp" alt="Senior Follies" class="lightbox-thumb"> -->
             </div>
+            <div class="vid">
+              <video id="video" controls></video>
+            </div>
           </section>
         <footer class="footer">
           <div class="footer-content">
@@ -149,6 +152,24 @@
     </div>
     <script src="js/lightbox.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
+  	<script>
+  	  const video = document.getElementById('video');
+  	  const source = "/vids/SLUHDance/SLUHDance.m3u8";   // ← your HLS playlist file
+
+  	  // If browser supports HLS natively (Safari, iOS)
+  	  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+  	    video.src = source;
+
+  	  // Otherwise use hls.js (Chrome, Firefox, Edge)
+  	  } else if (Hls.isSupported()) {
+  	    const hls = new Hls();
+  	    hls.loadSource(source);
+  	    hls.attachMedia(video);
+  	  } else {
+  	    console.error("HLS not supported on this browser.");
+  	  }
+  	</script>
 </body>
 </html>

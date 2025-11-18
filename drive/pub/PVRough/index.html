@@ -1,18 +1,48 @@
-<video id="video" controls></video>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script>
-  if (Hls.isSupported()) {
-    var video = document.getElementById('video');
-    var hls = new Hls();
-    hls.loadSource('PVRough.m3u8');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-      video.play();
-    });
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'PVRough.m3u8';
-    video.addEventListener('loadedmetadata', function () {
-      video.play();
-    });
-  }
-</script>   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HLS Video Player Demo</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      display: flex; 
+      justify-content: center; 
+      padding-top: 40px;
+    }
+    video {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your player -->
+  <video id="video" controls></video>
+
+  <!-- Include HLS.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script>
+    const video = document.getElementById('video');
+    const source = "PVRough.m3u8";   // ← your HLS playlist file
+
+    // If browser supports HLS natively (Safari, iOS)
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = source;
+
+    // Otherwise use hls.js (Chrome, Firefox, Edge)
+    } else if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(source);
+      hls.attachMedia(video);
+    } else {
+      console.error("HLS not supported on this browser.");
+    }
+  </script>
+
+</body>
+</html>

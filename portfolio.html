@@ -82,7 +82,7 @@
       <section class="vid-section">
         <h2 class="vid-title"><a href="rockband.html">Rockband</a></h2>
         <div class="vid">
-              <video id="video1" controls></video>
+              <video class="hls-player" controls data-source="/vids/Rockband/Rockband.m3u8"></video>
         </div>
       </section>
       <section class="gallery-section">
@@ -129,7 +129,7 @@
               <img src="images/sluh/follies8.webp" alt="Senior Follies" class="lightbox-thumb"> -->
             </div>
             <div class="vid">
-              <video id="video" controls></video>
+              <video class="hls-player" controls data-source="/vids/SLUHDance/SLUHDance.m3u8"></video>
             </div>
           </section>
         <footer class="footer">
@@ -154,39 +154,26 @@
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-  	<script>
-  	  const video = document.getElementById('video');
-  	  const source = "/vids/SLUHDance/SLUHDance.m3u8";   // ← your HLS playlist file
+  <script>
+    // Grab all video elements that should use HLS
+    const players = document.querySelectorAll('.hls-player');
 
-  	  // If browser supports HLS natively (Safari, iOS)
-  	  if (video.canPlayType('application/vnd.apple.mpegurl')) {
-  	    video.src = source;
+    players.forEach(video => {
+      const source = video.getAttribute('data-source');
 
-  	  // Otherwise use hls.js (Chrome, Firefox, Edge)
-  	  } else if (Hls.isSupported()) {
-  	    const hls = new Hls();
-  	    hls.loadSource(source);
-  	    hls.attachMedia(video);
-  	  } else {
-  	    console.error("HLS not supported on this browser.");
-  	  }
-  	</script>
-    <script>
-  	  const video1 = document.getElementById('video');
-  	  const source1 = "/vids/Rockband/Rockband.m3u8";   // ← your HLS playlist file
+      // Safari / iOS: native HLS support
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = source;
 
-  	  // If browser supports HLS natively (Safari, iOS)
-  	  if (video1.canPlayType('application/vnd.apple.mpegurl')) {
-  	    video1.src = source1;
-
-  	  // Otherwise use hls.js (Chrome, Firefox, Edge)
-  	  } else if (Hls.isSupported()) {
-  	    const hls = new Hls();
-  	    hls.loadSource(source1);
-  	    hls.attachMedia(video1);
-  	  } else {
-  	    console.error("HLS not supported on this browser.");
-  	  }
-  	</script>
+      // Other browsers: use hls.js
+      } else if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(source);
+        hls.attachMedia(video);
+      } else {
+        console.error('HLS not supported in this browser for', source);
+      }
+    });
+  </script>
 </body>
 </html>

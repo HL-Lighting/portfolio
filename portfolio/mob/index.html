@@ -102,7 +102,7 @@
 		  <section class="vid-section">
             <h2 class="vid-title">Design Process Mini Movie</h2>
             <div class="vid">
-              <video class="hls-player" controls data-source="/vids/MiniMovie/MiniMovie.m3u8"></video>
+  				<video id="video" controls></video>
             </div>
         </section>
 		  <footer class="footer">
@@ -123,26 +123,23 @@
           </div>
 	</div>
 	<script src="/js/lightbox.js"></script>
-<script>
-    // Grab all video elements that should use HLS
-    const players = document.querySelectorAll('.hls-player');
+	<script>
+  	  const video = document.getElementById('video');
+  	  const source = "/vids/MiniMovie/MiniMovie.m3u8";   // ← your HLS playlist file
 
-    players.forEach(video => {
-      const source = video.getAttribute('data-source');
+  	  // If browser supports HLS natively (Safari, iOS)
+  	  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+  	    video.src = source;
 
-      // Safari / iOS: native HLS support
-      if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = source;
-
-      // Other browsers: use hls.js
-      } else if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(source);
-        hls.attachMedia(video);
-      } else {
-        console.error('HLS not supported in this browser for', source);
-      }
-    });
-  </script>	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  	  // Otherwise use hls.js (Chrome, Firefox, Edge)
+  	  } else if (Hls.isSupported()) {
+  	    const hls = new Hls();
+  	    hls.loadSource(source);
+  	    hls.attachMedia(video);
+  	  } else {
+  	    console.error("HLS not supported on this browser.");
+  	  }
+  	</script>
+  	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </body>
 </html>

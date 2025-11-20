@@ -123,7 +123,26 @@
           </div>
 	</div>
 	<script src="/js/lightbox.js"></script>
-	<script src="/js/video.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    // Grab all video elements that should use HLS
+    const players = document.querySelectorAll('.hls-player');
+
+    players.forEach(video => {
+      const source = video.getAttribute('data-source');
+
+      // Safari / iOS: native HLS support
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = source;
+
+      // Other browsers: use hls.js
+      } else if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(source);
+        hls.attachMedia(video);
+      } else {
+        console.error('HLS not supported in this browser for', source);
+      }
+    });
+  </script>	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </body>
 </html>

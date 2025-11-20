@@ -123,7 +123,9 @@
           </div>
 	</div>
 	<script src="/js/lightbox.js"></script>
-	<script>
+	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  	<script>
   	  const video = document.getElementById('video');
   	  const source = "/vids/MiniMovie/MiniMovie.m3u8";   // ← your HLS playlist file
 
@@ -140,6 +142,5 @@
   	    console.error("HLS not supported on this browser.");
   	  }
   	</script>
-  	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </body>
 </html>

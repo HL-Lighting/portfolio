@@ -1,33 +1,71 @@
-<section class="media-split">
-  <!-- Portrait media column -->
-  <div class="media-col">
-    <!-- Use EITHER img or video -->
+<!doctype html>
+<html lang="en">
 
-    <!-- Image example -->
-    <!-- <img src="portrait.jpg" alt="Portrait visual" /> -->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Henry Ledbetter's Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
 
-    <!-- Video example -->
-    <video
-      src="portrait-video.mp4"
-      autoplay
-      muted
-      loop
-      playsinline>
-    </video>
-  </div>
+<body>
+	<div class="popup" id="popup">
+    		    <h2>Welcome Safari User!</h2>
+    		    <p>You're using Safari, an inferior browser forced on Apple users- for this website to look best please open it in a <a href="https://brave.com/download/">chromium based browser.</a></p>
+    		    <button class="close-btn" onclick="closePopup()">Close</button>
+    		</div>
 
-  <!-- Wide text column -->
-  <div class="text-col">
-    <h2>Section Title</h2>
-    <p>
-      This is your wide, landscape-style text area. It’s designed to feel
-      like the horizontal counterpart to a portrait image or video.
-    </p>
-    <p>
-      You can add multiple paragraphs, lists, or even buttons here.
-    </p>
-  </div>
-</section>
+	<div id="wrapper">
+
+		<header>
+			<nav class="navbar">
+				<div class="logo-container">
+				  <a href="/"><img src="/images/msc/HenryLogo.png" alt="Logo" class="logo"></a>
+				</div>
+				<ul class="nav-links">
+				  <li><a href="/">Home</a></li>
+				  <li><a href="/resume/">Resume</a></li>
+				  <li class="dropdown">
+					<a href="/portfolio/" id="portfolio" aria-haspopup="true" aria-expanded="false">Portfolio ▾</a>
+                    <ul class="dropdown-menu" aria-labelledby="portfolio">
+						<li><a href="/portfolio/mob/">Men On Boats</a></li>
+                        <li><a href="/portfolio/pirates/">The Pirates of Penzance</a></li>
+                        <li><a href="/portfolio/everybody/">Everybody</a></li>
+						<li><a href="/portfolio/rockband/">Rockband Project</a></li>
+                    </ul>
+                </li>
+				  <!-- <li><a href="about.html">About Me</a></li> -->
+				</ul>
+			</nav>
+			<div class="overlay" id="overlay"></div>
+			<div class="hero" style="background-image: url('/images/sluh/dance8.webp');">
+				<div class="hero-content" style="padding-bottom: 50vh;">
+					<h1 class="page-title">Henry Ledbetter</h1>
+					<h3 class="subheading">Lighting Designer/Programmer</h3><br>
+					<p class="subheading"><a href="/portfolio/">Portfolio</a></p><br>
+                    <!-- <p class="subheading">potential proudest work link</p> -->
+				</div>
+			</div>
+		</header>
+    <section class="media-split">
+      <!-- Portrait media column -->
+      <div class="media-col">
+        <video
+          src="media/sxmpra.mp4"
+          muted
+          loop
+          playsinline>
+        </video>
+      </div>
+
+      <!-- Wide text column -->
+      <div class="text-col">
+        <h2>Section Title</h2>
+        <p>
+         This is a video from a concert I went to with my roommate featuring Sxmpra and Teddy Slugz, I really liked the lighting in this video because it has all blue top/back light and all magenta/purple front/up light which compliment each other really well.
+        </p>
+      </div>
+    </section>
 <script src="/js/lightbox.js"></script>
     <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>

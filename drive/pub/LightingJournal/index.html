@@ -1,0 +1,55 @@
+<section class="media-split">
+  <!-- Portrait media column -->
+  <div class="media-col">
+    <!-- Use EITHER img or video -->
+
+    <!-- Image example -->
+    <!-- <img src="portrait.jpg" alt="Portrait visual" /> -->
+
+    <!-- Video example -->
+    <video
+      src="portrait-video.mp4"
+      autoplay
+      muted
+      loop
+      playsinline>
+    </video>
+  </div>
+
+  <!-- Wide text column -->
+  <div class="text-col">
+    <h2>Section Title</h2>
+    <p>
+      This is your wide, landscape-style text area. It’s designed to feel
+      like the horizontal counterpart to a portrait image or video.
+    </p>
+    <p>
+      You can add multiple paragraphs, lists, or even buttons here.
+    </p>
+  </div>
+</section>
+<script src="/js/lightbox.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script>
+    // Grab all video elements that should use HLS
+    const players = document.querySelectorAll('.hls-player');
+
+    players.forEach(video => {
+      const source = video.getAttribute('data-source');
+
+      // Safari / iOS: native HLS support
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = source;
+
+      // Other browsers: use hls.js
+      } else if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(source);
+        hls.attachMedia(video);
+      } else {
+        console.error('HLS not supported in this browser for', source);
+      }
+    });
+  </script>

@@ -51,22 +51,3 @@ menuItems.forEach((item, index) => {
   });
 });
 
-function isSafari() {
-    const userAgent = navigator.userAgent;
-    return /^((?!chrome|android).)*safari/i.test(userAgent);
-}
-
-function showPopup() {
-    document.getElementById("popup").style.display = "block";
-    document.getElementById("overlay").style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
-}
-
-// Show the popup if the user is on Safari
-if (isSafari()) {
-    window.addEventListener("load", showPopup);
-}

@@ -23,7 +23,7 @@ email: henry@henryledbetter.com
 description: >- # this means to ignore newlines until "baseurl:"
   Henry Ledbetter is a Lighting Designer and Programmer based out of Fort Collins, Colorado and St. Louis, Missouri but is open to work accross the US and abroad.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://hl-lighting.github.io/portfolio-dev/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://henryledbetter.com/" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  hl-lighting
 
